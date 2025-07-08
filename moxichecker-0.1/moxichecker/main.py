@@ -97,7 +97,7 @@ def main(argv: Optional[list] = None):
     logging.info("Used theory: %s", logic)
     prover = get_prover(args, system)
     verdict = prover.check_property(Not(query))
-    logging.info("Model-checking result: %s", "UNREACHABLE" if verdict else "REACHABLE")
+    logging.info("Model-checking result: %s", "safe" if verdict else "unsafe")
 
 
 if __name__ == "__main__":
