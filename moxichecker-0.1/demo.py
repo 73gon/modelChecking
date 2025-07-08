@@ -10,7 +10,7 @@ Verwendung:
 $ python demo.py
 
 Beispiel:
-"examples/QF_LIA/FibonacciSequence_unreach.moxi.json" -> unsafe
+"examples/QF_LIA/FibonacciSequence_unreach.moxi.json" -> safe
 "examples/QF_LIA/IntIncrement_reach.moxi.json" -> unsafe
 """
 
