@@ -1,0 +1,10 @@
+[tool.black]
+exclude = ""
+
+[tool.pytype]
+inputs = []
+exclude = []
+
+[tool.ruff]
+ignore = [ 'E501' ]
+exclude = []

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BASE_DIR=$(readlink -f $(dirname $0)/..)
+export PYTHONPATH="${BASE_DIR}:${PYTHONPATH}"
+export PYTHONDONTWRITEBYTECODE=1
+export PYSMT_CYTHON=False
+
+python3 -m moxichecker.moxichecker "$@"

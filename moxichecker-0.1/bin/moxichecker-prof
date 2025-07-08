@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BASE_DIR=$(readlink -f $(dirname $0)/..)
+export PYTHONPATH="${BASE_DIR}:${PYTHONPATH}"
+export PYTHONDONTWRITEBYTECODE=1
+export PYSMT_CYTHON=False
+
+uuid=$(uuidgen)
+
+python3 -m cProfile -o profile-${uuid}.pstats -m moxichecker.moxichecker $@
+gprof2dot -f pstats profile-${uuid}.pstats | dot -Tsvg -o profile-${uuid}.svg
+echo "[INFO] Profile saved to 'profile-${uuid}.{pstats.svg}'"

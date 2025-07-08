@@ -1,0 +1,14 @@
+(set−logic QF_BV)
+(define−system main
+  :input ()
+  :output ((s (_ BitVec 3)))
+  :local ()
+  :init (= s #b000)
+  :trans (= s’ (bvadd s #b010))
+  :inv true)
+(check−system main
+  :input ()
+  :output ((s (_ BitVec 3)))
+  :local ()
+  :reachable (rch_1 (= (bvurem s #b010) #b001))
+  :query (qry_rch_1 (rch_1)))
