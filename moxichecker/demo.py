@@ -21,14 +21,13 @@ from moxichecker.main import main
 # --------------------------
 
 # Pfad zur MoXI-Datei
-MOXI_PATH1 = "examples/QF_LIA/FibonacciSequence_unreach.moxi.json"
-MOXI_PATH2 = "examples/QF_LIA/IntIncrement_reach.moxi.json"
+MOXI_PATH = "examples/QF_LIA/FibonacciSequence_unreach.moxi.json"
 
 # Konfiguration: Solver und Algorithmus
 args = [
     "--solver", "z3",         # oder msat
     "--mc-alg", "kind",       # kind, bmc, ic3
-    MOXI_PATH1
+    MOXI_PATH
 ]
 
 # --------------------------
@@ -36,6 +35,6 @@ args = [
 # --------------------------
 
 if __name__ == "__main__":
-    print(f"🔍 Starte MoXIchecker mit Datei: {MOXI_PATH1}")
+    print(f"🔍 Starte MoXIchecker mit Datei: {MOXI_PATH}")
     print(f"⚙️  Konfiguration: Solver=z3, Algorithmus=k-induktion\n")
     main(args)
